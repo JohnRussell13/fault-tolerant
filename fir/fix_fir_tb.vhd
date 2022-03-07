@@ -8,6 +8,7 @@ entity fix_fir_tb is
 end fix_fir_tb;
 
 architecture Behavioral of fix_fir_tb is
+    constant size : integer := 24;
     signal clk_s : std_logic;
     signal rst_s : std_logic;
     signal uut_input_s : std_logic_vector(size-1 downto 0);
@@ -22,6 +23,7 @@ architecture Behavioral of fix_fir_tb is
 begin
     fir_under_test:
     entity work.top(behavioral)
+    generic map(size=>size)
     port map(clk=>clk_s,
              rst=>rst_s,
              u=>uut_input_s,

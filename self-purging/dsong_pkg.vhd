@@ -3,8 +3,8 @@ use ieee.std_logic_1164.all;
 
 package dsong_pkg is
     constant size: integer := 24;
-    constant num_units: integer := 5;
-    constant comb: integer := 10; -- 5!/(3!2!) maj3
+    constant num_units: integer := 4;
+    constant comb: integer := 4; -- 5!/(3!2!) maj3
     
     type std_array is array(0 to num_units-1) of std_logic_vector (size-1 downto 0);
     
@@ -15,6 +15,10 @@ package dsong_pkg is
                     y: in integer;
                     z: in integer)
             return integer;
+     
+--     function comb(x: in integer;
+--                     y: in integer)
+--             return integer;
 end package dsong_pkg;
 
 package body dsong_pkg is
@@ -40,4 +44,20 @@ begin
     return sum;
 end;
  
+
+-- function comb(x: in integer;
+--                 y: in integer)
+--             return integer is
+-- variable res: integer := 1;
+-- begin
+--     for i in x downto y+1 loop
+--         res := res * i;
+--     end loop;
+--     
+--     for i in y downto 1 loop
+--         res := res * i;
+--     end loop;
+--     
+--     return res;
+-- end;
 end package body dsong_pkg;
