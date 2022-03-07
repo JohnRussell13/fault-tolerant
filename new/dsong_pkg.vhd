@@ -47,8 +47,8 @@ begin
         res := res * i;
     end loop;
     
-    for i in y downto 1 loop
-        res := res * i;
+    for i in x-y downto 1 loop
+        res := res / i;
     end loop;
     
     return res;
