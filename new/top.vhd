@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity top is
-    generic(num_units: integer := 13;
+    generic(num_units: integer := 5;
             size: integer := 24);
     port(clk: in std_logic;
          rst: in std_logic;
@@ -40,6 +40,9 @@ architecture Behavioral of top is
     type dir_array is array(0 to num_units-1) of std_logic_vector(size-1 downto 0);
     
     signal c_mod: dir_array; -- each unit result
+    attribute dont_touch : string;
+    attribute dont_touch of c_mod : signal is "true";
+    
     signal c_esw: std_logic_vector(num_units*size-1 downto 0); -- each unit purged result
     signal c_vot: std_logic_vector(size-1 downto 0); -- final result
 begin

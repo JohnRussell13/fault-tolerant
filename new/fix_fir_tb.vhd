@@ -9,7 +9,7 @@ end fix_fir_tb;
 
 architecture Behavioral of fix_fir_tb is
     constant size : integer := 24;
-    constant num_units : integer := 3;
+    constant num_units : integer := 5;
     signal clk_s : std_logic;
     signal rst_s : std_logic;
     signal uut_input_s : std_logic_vector(size-1 downto 0);
