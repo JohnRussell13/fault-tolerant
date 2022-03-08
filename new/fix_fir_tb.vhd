@@ -17,9 +17,9 @@ architecture Behavioral of fix_fir_tb is
 
     constant per_c : time := 20ns;
     -- copy input file to PROJECT-NAME/PROJECT-NAME.sim/sim_1/behav/xsim
-    file input_test_vector : text open read_mode is "input.txt";
+    file input_test_vector : text open read_mode is "../../../../../input.txt";
     
-    file output : text open write_mode is "output_forced.txt";
+    file output : text open write_mode is "../../../../../output_forced.txt";
 
 begin
     fir_under_test:
