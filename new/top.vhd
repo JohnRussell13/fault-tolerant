@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity top is
-    generic(num_units: integer := 5;
+    generic(num_units: integer := 9;
             size: integer := 24);
     port(clk: in std_logic;
          rst: in std_logic;
